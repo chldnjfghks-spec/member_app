@@ -22,7 +22,15 @@ public class MemberDto {
         member.setName(dto.getName());
         member.setAge(dto.getAge());
         member.setAddress(dto.getAddress());
-        return member; 
+        return member;
     }
     // Member Entity -> MemberDTO로 변환
+    public static MemberDto toDto(Member member){
+        return new MemberDto(
+                member.getId(),
+                member.getName(),
+                member.getAge(),
+                member.getAddress()
+        );
+    }
 }
